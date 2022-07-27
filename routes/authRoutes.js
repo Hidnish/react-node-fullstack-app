@@ -1,7 +1,7 @@
 const passport = require('passport');
 
 // export this function to be used in 'index.js'
-module.exports = (app) => {
+module.exports = app => {
 	app.get(
 		'/auth/google',
 		passport.authenticate('google', {

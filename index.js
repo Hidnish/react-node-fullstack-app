@@ -14,7 +14,7 @@ const app = express();
 app.use(
     cookieSession({
         maxAge: 2592000000, //30 days in ms
-        keys: [keys.cookieKey],
+        keys: [keys.cookieKey], //used to encrypt the cookie
     })
 ) 
 

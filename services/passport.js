@@ -5,6 +5,8 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
+//THISS
+
 passport.serializeUser((user, done) => { //8
     done(null, user.id); //done(null, _id from mongoDB) rather than: done(null, Google profile ID)
 })
@@ -20,6 +22,7 @@ passport.use(
 			clientID: keys.googleClientID,
 			clientSecret: keys.googleClientSecret,
 			callbackURL: '/auth/google/callback', //2
+            userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
             proxy: true // trust heroku proxy to avoid taking away SSL from app's URL (https)
 		},
         //3, 7
